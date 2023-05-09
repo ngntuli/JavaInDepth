@@ -76,12 +76,40 @@ public class BasicsDemo {
 		System.out.println("myArray[6]: " + myArray[6]);
 	}
 
+	static void threeDimensionalArrays() {
+		System.out.println("\nInside threeDimensionalArrays ...");
+		int[][][] unitsSold = new int[][][] { { // Johannesburg
+				{ 0, 0, 0, 0 }, // Jan
+				{ 0, 0, 0, 0 }, // Feb
+				{ 0, 0, 0, 0 }, // Mar
+				{ 0, 850, 0, 0 }// Apr
+				}, { // CapeTown
+						{ 0, 0, 0, 0 }, // Jan
+						{ 0, 0, 0, 0 }, // Feb
+						{ 0, 0, 0, 0 }, // Mar
+						{ 0, 0, 0, 0 } // Apr
+				}, { // Pretoria
+						{ 0, 0, 0, 0 }, // Jan
+						{ 0, 0, 0, 0 }, // Feb
+						{ 0, 0, 0, 0 }, // Mar
+						{ 0, 0, 0, 0 } // Apr
+				}, { // Bloemfontein
+						{ 0, 0, 0, 0 }, // Jan
+						{ 0, 0, 0, 0 }, // Feb
+						{ 0, 0, 0, 0 }, // Mar
+						{ 0, 0, 0, 0 } // April
+				} };
+
+		System.out.println("unitsSold[0][3][1]: " + unitsSold[0][3][1]);
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
 		// primitives();
 		// typeCasting();
-		arrays();
+		// arrays();
+		threeDimensionalArrays();
 	}
 
 }
