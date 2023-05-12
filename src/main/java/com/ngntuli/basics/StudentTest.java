@@ -25,6 +25,30 @@ class StudentTest {
 		// Update student1's name from Uhando to john by invoking updateProfile method
 		student1.updateProfile("Uthando");
 		System.out.println("Updated name of student1: " + student1.name);
+
+		Student student4 = student1;
+		System.out.println("Name of student4: " + student4.name);
+
+		student4.updateProfile("Doctor");
+		System.out.println("Name of student1: " + student1.name);
+
+		student4 = student2;
+		System.out.println("Name of student4: " + student4.name);
+
+		student2 = student1;
+		System.out.println("Name of student4: " + student4.name);
+		System.out.println("Name of student2: " + student2.name);
+
+		student4 = new Student("David");
+		System.out.println("Name of student4: " + student4.name);
+		System.out.println("Name of student2: " + student2.name);
+		System.out.println("Name of student1: " + student1.name);
+		System.out.println();
+		System.out.println("Name of student1: " + student1.name);
+		System.out.println("Name of student2: " + student2.name);
+		System.out.println("Name of student3: " + student3.name);
+		System.out.println("Name of student4: " + student4.name);
+
 	}
 
 }
