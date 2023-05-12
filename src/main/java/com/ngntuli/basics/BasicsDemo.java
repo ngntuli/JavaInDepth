@@ -141,6 +141,23 @@ public class BasicsDemo {
 		System.out.println(index);
 	}
 
+	static void compoundArithmeticAssignment() {
+		int x = 100;
+
+		System.out.println("x += 5: " + (x += 5));
+		System.out.println("x -= 5: " + (x -= 5));
+		System.out.println("x *= 5: " + (x *= 5));
+		System.out.println("x /= 5: " + (x /= 5));
+		System.out.println("x %= 5: " + (x %= 5));
+
+		// Invalid
+		System.out.println("x =+ 5: " + (x =+ 5)); // Unary plus ~ x = +5
+		System.out.println("x =- 5: " + (x =- 5)); // Unary minus ~ x = -5
+		/*System.out.println("x =* 5: " + (x =* 5));
+		System.out.println("x =/ 5: " + (x =/ 5));
+		System.out.println("x =% 5: " + (x =% 5));*/
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -149,7 +166,8 @@ public class BasicsDemo {
 		// arrays();
 		// threeDimensionalArrays();
 		// printVarargsOverload();
-		preAndPost();
+		// preAndPost();
+		compoundArithmeticAssignment();
 	}
 
 }
