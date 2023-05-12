@@ -121,6 +121,26 @@ public class BasicsDemo {
 		varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
 	}
 
+	static void preAndPost() {
+		System.out.println("\nInside preAndPost ...");
+
+		int x = 5;
+
+		--x;
+		System.out.println("x: " + x);
+
+		int y = x--;
+		System.out.println("y: " + y + ", x: " + x);
+
+		int index = 0;
+		int[] array = new int[3];
+		array[index++] = 10;
+		array[index++] = 20;
+		array[index++] = 30;
+
+		System.out.println(index);
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -128,7 +148,8 @@ public class BasicsDemo {
 		// typeCasting();
 		// arrays();
 		// threeDimensionalArrays();
-		printVarargsOverload();
+		// printVarargsOverload();
+		preAndPost();
 	}
 
 }
