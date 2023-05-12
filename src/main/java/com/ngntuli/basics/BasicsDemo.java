@@ -153,9 +153,16 @@ public class BasicsDemo {
 		// Invalid
 		System.out.println("x =+ 5: " + (x =+ 5)); // Unary plus ~ x = +5
 		System.out.println("x =- 5: " + (x =- 5)); // Unary minus ~ x = -5
-		/*System.out.println("x =* 5: " + (x =* 5));
-		System.out.println("x =/ 5: " + (x =/ 5));
-		System.out.println("x =% 5: " + (x =% 5));*/
+		
+		/*
+		 * System.out.println("x =* 5: " + (x =* 5));
+		 * System.out.println("x =/ 5: " + (x =/ 5));
+		 * System.out.println("x =% 5: " + (x =% 5));
+		 */
+	}
+	
+	static void isOddOrEven(int num) {
+		System.out.println(num % 2);
 	}
 
 	public static void main(String[] args) {
@@ -167,7 +174,8 @@ public class BasicsDemo {
 		// threeDimensionalArrays();
 		// printVarargsOverload();
 		// preAndPost();
-		compoundArithmeticAssignment();
+		// compoundArithmeticAssignment();
+		isOddOrEven(42);
 	}
 
 }
