@@ -175,6 +175,43 @@ public class BasicsDemo {
 															// equivalents 97 & 98 are added
 	}
 
+	// Comparison or Relational operators
+	static void comparisonOperators() {
+		int age = 33;
+		/*
+		 * if (age > 35) { System.out.println("Earn up to R25 000"); }
+		 */
+
+		System.out.println("\n*** Inside charTypePromotion ... ***");
+		System.out.println("age > 33: " + (age > 33));
+		System.out.println("age >= 33: " + (age >= 33));
+		System.out.println("age < 33: " + (age < 33));
+		System.out.println("age <= 33: " + (age <= 33));
+		System.out.println("age == 33: " + (age == 33)); // equal to (equality operator)
+		System.out.println("age != 33: " + (age != 33)); // not equal to (equality operator)
+
+		boolean isInternational = true;
+		// System.out.println("isInternational <= true: " + (isInternational <= true));
+		System.out.println("isInternational == true: " + (isInternational == true));
+		System.out.println("isInternational != true: " + (isInternational != true));
+
+		Student s1 = new Student(1000, "Nkosinathi");
+		Student s2 = new Student(1000, "Nkosinathi");
+		System.out.println("s1 == s2: " + (s1 == s2)); // See object class
+		System.out.println("s1 != s2: " + (s1 != s2));
+
+		update(s1, "John");
+	}
+
+	static boolean update(Student s, String name) {
+		if (s == null) {
+			return false;
+		}
+
+		s.name = name;
+		return true;
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -186,7 +223,8 @@ public class BasicsDemo {
 		// preAndPost();
 		// compoundArithmeticAssignment();
 		// isOddOrEven(42);
-		charTypePromotion();
+		// charTypePromotion();
+		comparisonOperators();
 	}
 
 }
