@@ -154,10 +154,10 @@ public class BasicsDemo {
 		System.out.println("x =+ 5: " + (x = +5)); // Unary plus ~ x = +5
 		System.out.println("x =- 5: " + (x = -5)); // Unary minus ~ x = -5
 
-		/*
-		 * System.out.println("x =* 5: " + (x =* 5)); System.out.println("x =/ 5: " + (x
-		 * =/ 5)); System.out.println("x =% 5: " + (x =% 5));
-		 */
+		// System.out.println("x =* 5: " + (x =* 5));
+		// System.out.println("x =/ 5: " + (x =/ 5));
+		// System.out.println("x =% 5: " + (x =% 5));
+
 	}
 
 	static void isOddOrEven(int num) {
@@ -212,6 +212,44 @@ public class BasicsDemo {
 		return true;
 	}
 
+	static void logicalOperators() {
+		System.out.println("\n*** Inside logicalOperators ... ***");
+		int age = 35;
+		int salary = 25000;
+		boolean hasBadCredit = false;
+
+		// 1. Core (AND, OR, NOT & Operator Chaining)
+
+		if (age > 35 && salary > 30000 || !hasBadCredit) {
+			System.out.println("Loan approved!");
+		} else {
+			System.out.println("Loan not approved!");
+		}
+
+		// 2.
+		// (a) Left-associative ~ Order of grouping
+		// (b) Associativity (a && b) && c = a && (b && c)
+		// Applies to both && and ||
+
+		// 3.
+		// (a) Operator precedence of Logical Operators: Helps with ONLY grouping
+		// operations. Not order of execution. (! > && > ||)
+
+		// Other Examples: A && B || C && D = (A && B) || (C && D)
+		// A && B && C || D = ((A && B) && C) || D
+
+		// (b) Operator Precedence across logical, comparison and arithmetic
+		// ! > arithmetic > comparison > &&, ||
+		// See resources section for complete precedence rules
+
+		// ALWAYS USE PARENTHESIS for READABILITY. Not everyone is aware of precedence
+		// rules
+
+		// 4. Use && to avoid NullPointerException
+		Student s1 = new Student(1001, "Uthando");
+		update(s1, "Nkosinathi");
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -224,7 +262,8 @@ public class BasicsDemo {
 		// compoundArithmeticAssignment();
 		// isOddOrEven(42);
 		// charTypePromotion();
-		comparisonOperators();
+		// comparisonOperators();
+		logicalOperators();
 	}
 
 }
