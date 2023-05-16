@@ -274,6 +274,35 @@ public class BasicsDemo {
 		// System.out.println("d1 | d2: " + (d1 | d2));
 	}
 
+	static boolean ifStatement() {
+		boolean approved = false;
+
+		int age = 33;
+		int salary = 13_000;
+		boolean hasBadCredit = false;
+
+		System.out.println("\n*** Inside ifStatement ...*** ");
+		if (age >= 25 && age <= 35 && salary >= 13_000) {
+			approved = true;
+			System.out.println("age >= 25 && age <= 35 && salary >= R13 000");
+		} else if (age > 35 && age <= 45 && salary >= 25_000) {
+			approved = true;
+			System.out.println("age > 35 && age <= 45 && salary >= R25 000");
+		} else if (age > 45 && age <= 55 && salary >= 28_000) {
+			approved = true;
+			System.out.println("age > 45 && age <= 55 && salary >= R28 000");
+		} else {
+			if (age > 55 && !hasBadCredit) {
+				approved = true;
+				System.out.println("age > 55 && !hasBadCredit");
+			}
+			System.out.println("else block");
+		}
+
+		System.out.println("Outside if statement");
+		return approved;
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -288,7 +317,8 @@ public class BasicsDemo {
 		// charTypePromotion();
 		// comparisonOperators();
 		// logicalOperators();
-		bitwiseOperators();
+		// bitwiseOperators();
+		ifStatement();
 	}
 
 }
