@@ -303,6 +303,24 @@ public class BasicsDemo {
 		return approved;
 	}
 
+	static void switchExample() {
+		System.out.println("\n*** Inside switchExample ...*** ");
+		int month = 3;
+		switch (month) {
+		case 1:
+			System.out.println("January");
+			break;
+		case 2:
+			System.out.println("February");
+			break;
+		case 3:
+			System.out.println("March");
+			break;
+		default:
+			System.out.println("April");
+		}
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -318,7 +336,8 @@ public class BasicsDemo {
 		// comparisonOperators();
 		// logicalOperators();
 		// bitwiseOperators();
-		ifStatement();
+		// ifStatement();
+		switchExample();
 	}
 
 }
