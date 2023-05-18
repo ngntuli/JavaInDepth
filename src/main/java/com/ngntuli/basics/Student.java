@@ -2,9 +2,17 @@ package com.ngntuli.basics;
 
 class Student {
 	// variable declarations
-	int id;
-	String name;
-	String gender = "male";
+	private int id;
+	private String name;
+	private String gender = "male";
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	// Constructors
 	Student(int id, String name) {
