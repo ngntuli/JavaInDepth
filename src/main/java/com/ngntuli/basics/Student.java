@@ -15,13 +15,10 @@ class Student {
 	}
 
 	// Constructors
-	Student(int id, String name) {
-		this(name); // Invoking overloaded constructor. If present, should be first statement
+	public Student(int id, String name, String gender) {
 		this.id = id;
-	}
-
-	Student(String name) {
 		this.name = name;
+		this.gender = gender;
 	}
 
 	// method definitions
