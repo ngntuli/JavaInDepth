@@ -448,6 +448,14 @@ public class BasicsDemo {
 
 		// Static method (includes overloaded methods)
 		System.out.println("\nString.valueOf(1.3): " + String.valueOf(1.3));
+
+		// Converts this string to a new character array
+		System.out.print("\ns.toCharArray(): ");
+		char[] sToCharArray = s.toCharArray();
+		for (char c : sToCharArray) {
+			System.out.print(" " + c);
+		}
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
