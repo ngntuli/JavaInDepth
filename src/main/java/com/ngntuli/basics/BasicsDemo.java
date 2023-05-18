@@ -456,6 +456,9 @@ public class BasicsDemo {
 			System.out.print(" " + c);
 		}
 		System.out.println();
+
+		// Concatenation of string repeated count times
+		System.out.println("\ns.repeat(6): " + s.repeat(6));
 	}
 
 	public static void main(String[] args) {
