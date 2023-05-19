@@ -12,6 +12,7 @@ public class BasicsDemo {
 		System.out.println("Hello,");
 		System.out.print(" "); // Print a space
 		System.out.print("world!!");
+		// Test new eclipse
 	}
 
 	static void primitives() {
