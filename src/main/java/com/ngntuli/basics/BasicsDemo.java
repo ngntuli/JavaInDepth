@@ -195,12 +195,12 @@ public class BasicsDemo {
 		System.out.println("isInternational == true: " + (isInternational == true));
 		System.out.println("isInternational != true: " + (isInternational != true));
 
-		Student s1 = new Student(1000, "Nkosinathi");
-		Student s2 = new Student(1000, "Nkosinathi");
+		Student s1 = new Student(1000, "Nkosinathi", "male");
+		Student s2 = new Student(1000, "Nkosinathi", "male");
 		System.out.println("s1 == s2: " + (s1 == s2)); // See object class
 		System.out.println("s1 != s2: " + (s1 != s2));
 
-		update(s1, "John");
+		s1.setName("Givenson");
 	}
 
 	static boolean update(Student s, String name) {
@@ -208,7 +208,7 @@ public class BasicsDemo {
 			return false;
 		}
 
-		s.name = name;
+		s.setName(name);
 		return true;
 	}
 
@@ -246,7 +246,7 @@ public class BasicsDemo {
 		// rules
 
 		// 4. Use && to avoid NullPointerException
-		Student s1 = new Student(1001, "Uthando");
+		Student s1 = new Student(1001, "Uthando", "female");
 		update(s1, "Nkosinathi");
 	}
 
