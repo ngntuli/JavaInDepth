@@ -2,6 +2,8 @@ package com.ngntuli.basics;
 
 class Student {
 	// variable declarations
+	private static int studentCount;
+
 	private int id;
 	private String name;
 	private String gender = "male";
@@ -14,11 +16,16 @@ class Student {
 		this.name = name;
 	}
 
+	public static int getStudentCount() {
+		return studentCount;
+	}
+
 	// Constructors
 	public Student(int id, String name, String gender) {
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
+		studentCount++;
 	}
 
 	// method definitions
