@@ -23,6 +23,7 @@ class StudentTest {
 		student1.setName("Uthando");
 		System.out.println("Updated name of student1: " + student1.getName());
 
+		System.out.println("# students created so far: " + Student.getStudentCount());
 	}
 
 }
