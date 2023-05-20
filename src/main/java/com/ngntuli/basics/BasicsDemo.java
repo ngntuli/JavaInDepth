@@ -478,6 +478,18 @@ public class BasicsDemo {
 		System.out.println("s1 == \"hel\" + s5: " + (s1 == "hel" + s5));
 	}
 
+	public BasicsDemo() {
+		System.out.println("Inside no-arg constructor ...");
+	}
+
+	public BasicsDemo(int id) {
+		System.out.println("Inside constructor with a parameter ...");
+	}
+
+	{
+		System.out.println("Inside instance initializer ...");
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -501,7 +513,8 @@ public class BasicsDemo {
 		// import demo
 		// package creation demo
 		// stringExamples();
-		stringPool();
+		// stringPool();
+		BasicsDemo bd = new BasicsDemo(1);
 	}
 
 }
