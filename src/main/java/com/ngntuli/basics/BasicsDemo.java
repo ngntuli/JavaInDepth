@@ -196,8 +196,8 @@ public class BasicsDemo {
 		System.out.println("isInternational == true: " + (isInternational == true));
 		System.out.println("isInternational != true: " + (isInternational != true));
 
-		Student s1 = new Student(1000, "Nkosinathi", "male");
-		Student s2 = new Student(1000, "Nkosinathi", "male");
+		Student s1 = new Student("Nkosinathi", "male");
+		Student s2 = new Student("Nkosinathi", "male");
 		System.out.println("s1 == s2: " + (s1 == s2)); // See object class
 		System.out.println("s1 != s2: " + (s1 != s2));
 
@@ -247,7 +247,7 @@ public class BasicsDemo {
 		// rules
 
 		// 4. Use && to avoid NullPointerException
-		Student s1 = new Student(1001, "Uthando", "female");
+		Student s1 = new Student("Uthando", "female");
 		update(s1, "Nkosinathi");
 	}
 
