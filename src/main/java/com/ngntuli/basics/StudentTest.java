@@ -3,16 +3,16 @@ package com.ngntuli.basics;
 class StudentTest {
 
 	public static void main(String[] args) {
-		int[] studentIds = new int[] { 1001, 1002, 1003 };
+		// int[] studentIds = new int[] { 1001, 1002, 1003 };
 
 		// Creating first student object and setting its state
-		Student student1 = new Student(studentIds[0], "Uhando", "female");
+		Student student1 = new Student("Uhando", "female");
 
 		// Creating second student object and setting its state
-		Student student2 = new Student(studentIds[1], "Charlotte", "female");
+		Student student2 = new Student("Charlotte", "female");
 
 		// Creating third student object and setting its state
-		Student student3 = new Student(studentIds[2], "Nkosinathi", "other");
+		Student student3 = new Student("Nkosinathi", "other");
 
 		// Print each students name
 		System.out.println("Name of student1: " + student1.getName());
