@@ -22,8 +22,7 @@ class Student {
 	}
 
 	// Constructors
-	public Student(int id, String name, String gender) {
-		this.id = id;
+	public Student(String name, String gender) {
 		this.name = name;
 		this.gender = gender;
 
