@@ -490,6 +490,14 @@ public class BasicsDemo {
 		System.out.println("Inside instance initializer ...");
 	}
 
+	static void veryExpensive() {
+		System.out.println("\n*** Inside veryExpensive ...***");
+		Long sum = 0L;
+		for (long i = 0; i < Integer.MAX_VALUE; i++) {
+			sum = sum + i;
+		}
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -514,7 +522,12 @@ public class BasicsDemo {
 		// package creation demo
 		// stringExamples();
 		// stringPool();
-		BasicsDemo bd = new BasicsDemo(1);
+		// BasicsDemo bd = new BasicsDemo(1);
+		Integer[] items = new Integer[] { 1, 2 };
+
+		long start = System.nanoTime();
+		veryExpensive();
+		System.out.println("Elapsed Time: " + ((System.nanoTime() - start) / 1_000_000.0) + " msec");
 	}
 
 }
