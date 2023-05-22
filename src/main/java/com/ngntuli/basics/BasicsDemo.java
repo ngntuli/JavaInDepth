@@ -498,6 +498,20 @@ public class BasicsDemo {
 		}
 	}
 
+	static void compareBoxPrimitives() {
+		System.out.println("\n*** Inside compareBoxPrimitives ...***");
+		Integer num1 = new Integer(0);
+		Integer num2 = new Integer(0);
+		System.out.println("(num1 == num2): " + (num1 == num2));
+
+		// Solutions:
+		System.out.println("(num1.intValue() == num2.intValue()): " + (num1.intValue() == num2.intValue()));
+		System.out.println("(num1.equals(num2)): " + (num1.equals(num2)));
+
+		Integer num3 = new Integer(1);
+		System.out.println("(num1 < num3): " + (num1 < num3)); // "<" does un-boxing first
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -523,11 +537,14 @@ public class BasicsDemo {
 		// stringExamples();
 		// stringPool();
 		// BasicsDemo bd = new BasicsDemo(1);
-		Integer[] items = new Integer[] { 1, 2 };
-
-		long start = System.nanoTime();
-		veryExpensive();
-		System.out.println("Elapsed Time: " + ((System.nanoTime() - start) / 1_000_000.0) + " msec");
+		/*
+		 * Integer[] items = new Integer[] { 1, 2 };
+		 * 
+		 * long start = System.nanoTime(); veryExpensive();
+		 * System.out.println("Elapsed Time: " + ((System.nanoTime() - start) /
+		 * 1_000_000.0) + " msec");
+		 */
+		compareBoxPrimitives();
 	}
 
 }
