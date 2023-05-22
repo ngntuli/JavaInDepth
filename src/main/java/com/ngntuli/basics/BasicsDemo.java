@@ -512,6 +512,14 @@ public class BasicsDemo {
 		System.out.println("(num1 < num3): " + (num1 < num3)); // "<" does un-boxing first
 	}
 
+	static Integer i;
+
+	static void unbelievable() {
+		System.out.println("\n*** Inside unbelievable ...***");
+		if (i == 0)
+			System.out.println("weird!");
+	}
+
 	public static void main(String[] args) {
 		// Language Basics 1
 		// print();
@@ -544,7 +552,8 @@ public class BasicsDemo {
 		 * System.out.println("Elapsed Time: " + ((System.nanoTime() - start) /
 		 * 1_000_000.0) + " msec");
 		 */
-		compareBoxPrimitives();
+		// compareBoxPrimitives();
+		unbelievable();
 	}
 
 }
