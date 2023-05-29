@@ -9,7 +9,8 @@ public class User {
 
 	public void saveWebLink() {
 		System.out.println("User: saveWebLink");
-		postAReview("test");
+		postAReview("");
+		staticMethod();
 	}
 
 	public Review postAReview(String reviewText) {
@@ -29,5 +30,8 @@ public class User {
 
 	public void instanceMethod(User u) {
 		System.out.println("User: instanceMethod");
+	}
+
+	public final void finalMethod() {
 	}
 }

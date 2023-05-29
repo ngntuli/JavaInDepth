@@ -43,14 +43,23 @@ public class UserTest {
 		// ut.approveReview(new Editor());
 
 		// Method binding demo
-		User staff = new Staff();
-		System.out.println("-".repeat(26));
-		staff.staticMethod(); // part 1
-		User.staticMethod();
-		staff.postAReview("");
-		System.out.println("-".repeat(26));
-		staff.instanceMethod((int)10); // part 2
-		staff.instanceMethod(new Staff());
+		// User staff = new Staff();
+		// System.out.println("-".repeat(26));
+		// staff.staticMethod(); // part 1
+		// User.staticMethod();
+		// staff.postAReview("");
+		// System.out.println("-".repeat(26));
+		// staff.instanceMethod((int)10); // part 2
+		// staff.instanceMethod(new Staff());
+
+		// What is not overridden
+		User editor = new Editor();
+		System.out.println("-".repeat(26)); // print line
+		editor.staticMethod(); // early binding
+		System.out.println("-".repeat(26)); // print line
+		((Staff) editor).staticMethod();
+		System.out.println("-".repeat(26)); // print line
+		editor.saveWebLink();
 
 	}
 }

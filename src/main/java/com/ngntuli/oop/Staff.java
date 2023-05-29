@@ -26,4 +26,10 @@ public class Staff extends User {
 	public void instanceMethod(Staff s) {
 		System.out.println("Staff: instanceMethod");
 	}
+
+	// public void finalMethod() {}
+
+	public static void staticMethod() {
+		System.out.println("Staff: staticMethod");
+	}
 }
