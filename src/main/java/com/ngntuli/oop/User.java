@@ -2,6 +2,14 @@ package com.ngntuli.oop;
 
 public class User {
 	public int id = 1;
+	public String userType = "User";
+
+	public void displayUserInfo() {
+		System.out.println("-".repeat(26)); // print line
+		System.out.println("Printing User Info: ");
+		System.out.println("id: " + id);
+		System.out.println("userType: " + userType);
+	}
 
 	public void printUserType() {
 		System.out.println("User");
