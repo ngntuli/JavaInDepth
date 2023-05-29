@@ -18,4 +18,12 @@ public class Staff extends User {
 		review.setApproved(true);
 		return review;
 	}
+
+	public void instanceMethod(int i) {
+		System.out.println("Staff: instanceMethod");
+	}
+
+	public void instanceMethod(Staff s) {
+		System.out.println("Staff: instanceMethod");
+	}
 }
