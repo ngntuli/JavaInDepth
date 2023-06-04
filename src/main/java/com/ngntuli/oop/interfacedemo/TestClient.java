@@ -24,7 +24,10 @@ public class TestClient {
 		// }
 
 		// Default method demo
-		c.go();
-		c.run();
+		// c.go();
+		// c.run();
+		// c.staticMethod();
+		// C.staticMethod();
+		((X) c).inheritanceTest();
 	}
 }
