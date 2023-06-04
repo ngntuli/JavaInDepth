@@ -7,8 +7,13 @@ public class TestClient {
 
 	public static void main(String[] args) {
 		C c = new X();
-		c.foo();
-		c.bar();
-		c.foobar();
+		//c.foo();
+		//c.bar();
+		//c.foobar();
+		
+		   C clone = ((X)c).clone();
+		   if (clone != c) {
+		      System.out.println("Clone created!!");
+		   }
 	}
 }
