@@ -15,4 +15,8 @@ public interface C extends A {
 	default void run() {
 		System.out.println("C: run");
 	}
+
+	static void staticMethod() {
+		System.out.println("C: staticMethod");
+	}
 }
