@@ -1,5 +1,10 @@
 package com.ngntuli.oop.interfacedemo;
 
+/**
+ * 
+ * @author XYZ Inc.
+ *
+ */
 public class X extends AbstractA implements A, B, C, Cloneable {
 	public void foo() {
 		System.out.println("X: foo");
@@ -18,5 +23,11 @@ public class X extends AbstractA implements A, B, C, Cloneable {
 		}
 
 		return null;
+	}
+
+	public void inheritanceTest() {
+		go();
+		run();
+		// staticMethod();
 	}
 }
