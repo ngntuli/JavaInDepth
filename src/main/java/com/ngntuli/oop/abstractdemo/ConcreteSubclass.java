@@ -1,4 +1,4 @@
-package com.ngntuli.oop.absrt;
+package com.ngntuli.oop.abstractdemo;
 
 public class ConcreteSubclass extends AbstractSubclass {
 
