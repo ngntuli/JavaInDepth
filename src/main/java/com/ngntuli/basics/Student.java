@@ -1,6 +1,10 @@
 package com.ngntuli.basics;
 
-class Student {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Student {
+	public static final int COURSE_ENROLL_LIMIT = 3;
 	// variable declarations
 	private static int studentCount;
 
@@ -8,6 +12,8 @@ class Student {
 	private int id;
 	private String name;
 	private String gender = "male";
+
+	List<Course> enrolledCourses = new ArrayList<>();
 
 	public String getName() {
 		return name;
@@ -35,5 +41,35 @@ class Student {
 	boolean updateProfile(String name) {
 		this.name = name;
 		return true;
+	}
+
+	public String getGender() {
+		return this.gender;
+	}
+
+	public static int getIdInitializer() {
+		return idInitializer;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void enroll(Course course) {
+		if (enrolledCourses.size() < COURSE_ENROLL_LIMIT) {
+			enrolledCourses.add(course);
+		}
+		printEnrolledCourses();
+	}
+
+	private void printEnrolledCourses() {
+		for (Course course : enrolledCourses) {
+			if (course.getDepartment() != null)
+				System.out.println("Course: " + course.getName() + ", Department: " + course.getDepartment().getName());
+		}
+	}
+
+	public List<Course> getEnrolledCourses() {
+		return enrolledCourses;
 	}
 }
