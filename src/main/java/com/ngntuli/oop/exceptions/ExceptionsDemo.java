@@ -21,15 +21,11 @@ public class ExceptionsDemo {
 		System.out.println("\nInside share ...");
 
 		try {
-			HttpConnect.send(1, "hello", "http://www.spring-boot.com");
+			HttpConnect.send(-1, "hello", "http://www.spring-boot.com");
 		} catch (FileNotFoundException e) {
 			throw e;
 		} catch (IOException e) {
 			System.out.println("Connecting to a different server ...");
-		} catch (Exception e) {
-			// TODO: handle exception
-		} catch (Throwable e) {
-			// TODO: handle exception
 		}
 
 		System.out.println("\nEnd of share ...");
