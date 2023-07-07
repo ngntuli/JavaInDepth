@@ -23,13 +23,27 @@ public class ExceptionsDemo {
 		System.out.println("\nInside share ...");
 
 		try {
-			HttpConnect.send(0, "hello", "http://www.spring-boot.com");
+			String response = HttpConnect.send(1, "hello", "http://www.spring-boot.com");
 			System.out.println("After invoking send ...");
+			APIParser.parseSendResponseCode(response, "hello", "http://www.spring-boot.com");
 		} catch (FileNotFoundException e) {
 			System.out.println("Share: FileNotFoundException ...");
 			throw e;
 		} catch (IOException e) {
 			System.out.println("Connecting to a different server ...");
+		} catch (APIFormatChangeException e) {
+			// Item 65: Do not ignore exceptions
+			e.printStackTrace();
+
+			// Item 63: Include failure-capture information in detail messages
+			// System.out.println("e.toString(): " + e);
+			// System.out.println("e.getMessage(): " + e.getMessage());
+
+			// Item 63
+			// System.out.println("e.getElementName(): " + e.getElementName());
+
+			// Item 61: Throw exceptions appropriate to the abstraction
+			// e.getCause().printStackTrace();
 		} finally {
 			System.out.println("Inside share's finally ...");
 		}
