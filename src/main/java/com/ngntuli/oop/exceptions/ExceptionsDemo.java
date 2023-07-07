@@ -32,17 +32,14 @@ public class ExceptionsDemo {
 		} catch (IOException e) {
 			System.out.println("Connecting to a different server ...");
 		} catch (APIFormatChangeException e) {
-			// Item 65: Do not ignore exceptions
+			// Item 77: Do not ignore exceptions
 			e.printStackTrace();
 
-			// Item 63: Include failure-capture information in detail messages
+			// Item 75: Include failure-capture information in detail messages
 			// System.out.println("e.toString(): " + e);
 			// System.out.println("e.getMessage(): " + e.getMessage());
 
-			// Item 63
-			// System.out.println("e.getElementName(): " + e.getElementName());
-
-			// Item 61: Throw exceptions appropriate to the abstraction
+			// Item 73: Throw exceptions appropriate to the abstraction
 			// e.getCause().printStackTrace();
 		} finally {
 			System.out.println("Inside share's finally ...");
