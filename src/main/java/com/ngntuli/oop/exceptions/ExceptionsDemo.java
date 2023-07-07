@@ -38,6 +38,7 @@ public class ExceptionsDemo {
 			// Item 75: Include failure-capture information in detail messages
 			// System.out.println("e.toString(): " + e);
 			// System.out.println("e.getMessage(): " + e.getMessage());
+			System.out.println("e.getElementName(): " + e.getElementName());
 
 			// Item 73: Throw exceptions appropriate to the abstraction
 			// e.getCause().printStackTrace();
