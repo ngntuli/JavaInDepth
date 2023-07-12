@@ -1,4 +1,4 @@
-package com.ngntuli.oop.interfacedemo;
+package com.ngntuli.interfacedemo;
 
 public abstract class AbstractA implements A {
 	public void bar() {

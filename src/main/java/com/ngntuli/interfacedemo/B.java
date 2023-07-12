@@ -1,4 +1,4 @@
-package com.ngntuli.oop.interfacedemo;
+package com.ngntuli.interfacedemo;
 
 public interface B {
 	int VAL = TestClient.getVal();
