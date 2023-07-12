@@ -1,4 +1,4 @@
-package com.ngntuli.oop.abstractdemo;
+package com.ngntuli.abstractdemo;
 
 public abstract class AbstractSuperclass {
 	abstract void test1();
