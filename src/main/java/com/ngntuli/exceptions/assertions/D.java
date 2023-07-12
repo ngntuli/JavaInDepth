@@ -1,4 +1,4 @@
-package com.ngntuli.oop.exceptions.assertions;
+package com.ngntuli.exceptions.assertions;
 
 public class D {
 

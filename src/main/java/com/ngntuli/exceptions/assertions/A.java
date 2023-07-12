@@ -1,4 +1,4 @@
-package com.ngntuli.oop.exceptions.assertions;
+package com.ngntuli.exceptions.assertions;
 
 import com.ngntuli.oop.exceptions.assertions.p1.C;
 

@@ -1,4 +1,4 @@
-package com.ngntuli.oop.exceptions;
+package com.ngntuli.exceptions;
 
 public class APIFormatChangeException extends Exception {
 	private String response;

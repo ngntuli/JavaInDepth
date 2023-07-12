@@ -1,4 +1,4 @@
-package com.ngntuli.oop.exceptions;
+package com.ngntuli.exceptions;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

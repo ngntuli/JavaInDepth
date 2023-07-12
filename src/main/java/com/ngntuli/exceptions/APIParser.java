@@ -1,4 +1,4 @@
-package com.ngntuli.oop.exceptions;
+package com.ngntuli.exceptions;
 
 public class APIParser {
 	public static int parseSendResponseCode(String response, String data, String partner)

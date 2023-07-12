@@ -1,4 +1,4 @@
-package com.ngntuli.oop.exceptions;
+package com.ngntuli.exceptions;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
