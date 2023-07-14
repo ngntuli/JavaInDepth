@@ -1,4 +1,4 @@
-package com.ngntuli.abstractdemo;
+package com.ngntuli.oop.abstractdemo;
 
 public abstract class AbstractSubclass extends AbstractSuperclass {
 	@Override
