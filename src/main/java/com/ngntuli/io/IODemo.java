@@ -94,12 +94,16 @@ public class IODemo {
 		System.out.println("fileCopyWithBufferAndArray: " + (elapsedTime / 1000000.0) + " msec");
 	}
 
+	public static void getProperties() {
+		System.getProperties().list(System.out);
+	}
+
 	public static void main(String[] args) {
-		System.out.println(System.getProperty("file.encoding"));
 		// applyEncoding();
-		fileMethods();
+		// fileMethods();
 		// fileCopyNoBuffer();
 		// fileCopyWithBufferAndArray();
+		getProperties();
 
 	}
 }
