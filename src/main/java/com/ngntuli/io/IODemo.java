@@ -95,7 +95,11 @@ public class IODemo {
 	}
 
 	public static void getProperties() {
-		System.getProperties().list(System.out);
+		try {
+			System.getProperties().list(System.out);
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) {
