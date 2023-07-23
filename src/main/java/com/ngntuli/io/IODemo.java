@@ -47,9 +47,41 @@ public class IODemo {
 	}
 
 	public static void fileMethods() {
-		File fileIn = new File(inFileStr);
-		System.out.println("File size is " + fileIn.length() + " bytes");
-		System.out.println("File name is " + fileIn.getName());
+		System.out.println("\nInside fileMethods ...");
+
+		File f = new File(inFileStr); // "movies\\movies.txt" also works
+		// File f = new File("walden.jpg");
+
+		System.out.println("getAbsolutePath(): " + f.getAbsolutePath());
+		try {
+			System.out.println("getCanonicalPath(): " + f.getCanonicalPath());
+			System.out.println("createNewFile(): " + f.createNewFile());
+		} catch (IOException e) {
+		}
+		System.out.println("separator: " + f.separator);
+		System.out.println("separatorChar: " + f.separatorChar);
+		System.out.println("getParent(): " + f.getParent());
+		System.out.println("lastModified(): " + f.lastModified());
+		System.out.println("exists(): " + f.exists());
+		System.out.println("isFile(): " + f.isFile());
+		System.out.println("isDirectory(): " + f.isDirectory());
+		System.out.println("length(): " + f.length());
+
+		System.out.println("My working or user directory: " + System.getProperty("user.dir"));
+		System.out.println("new File(\"testdir\").mkdir(): " + new File("testdir").mkdir());
+		System.out.println("new File(\"testdir\\test\").mkdir(): " + new File("testdir\\test").mkdir());
+		System.out.println("new File(\"testdir\").delete(): " + new File("testdir").delete());
+		System.out.println("new File(\"testdir\\test1\\test2\").mkdir(): " + new File("testdir\\test1\\test2").mkdir());
+		System.out
+				.println("new File(\"testdir\\test1\\test2\").mkdirs(): " + new File("testdir\\test1\\test2").mkdirs());
+
+		try {
+			File f2 = new File("temp.txt");
+			System.out.println("f2.createNewFile(): " + f2.createNewFile());
+			System.out.println("f2.renameTo(...): " + f2.renameTo(new File("testdir\\temp1.txt"))); // move!!
+		} catch (IOException e) {
+		}
+
 	}
 
 	public static void fileCopyNoBuffer() {
@@ -143,11 +175,11 @@ public class IODemo {
 
 	public static void main(String[] args) {
 		// applyEncoding();
-		// fileMethods();
 		// fileCopyNoBuffer();
 		// fileCopyWithBufferAndArray();
 		// getProperties();
-		readFromStandardInput();
+		// readFromStandardInput();
+		fileMethods();
 
 	}
 }
