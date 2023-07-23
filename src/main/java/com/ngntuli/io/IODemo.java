@@ -69,16 +69,15 @@ public class IODemo {
 
 		System.out.println("My working or user directory: " + System.getProperty("user.dir"));
 		System.out.println("new File(\"testdir\").mkdir(): " + new File("testdir").mkdir());
-		System.out.println("new File(\"testdir\\test\").mkdir(): " + new File("testdir\\test").mkdir());
+		System.out.println("new File(\"testdir/test\").mkdir(): " + new File("testdir/test").mkdir());
 		System.out.println("new File(\"testdir\").delete(): " + new File("testdir").delete());
-		System.out.println("new File(\"testdir\\test1\\test2\").mkdir(): " + new File("testdir\\test1\\test2").mkdir());
-		System.out
-				.println("new File(\"testdir\\test1\\test2\").mkdirs(): " + new File("testdir\\test1\\test2").mkdirs());
+		System.out.println("new File(\"testdir/test1/test2\").mkdir(): " + new File("testdir/test1/test2").mkdir());
+		System.out.println("new File(\"testdir/test1/test2\").mkdirs(): " + new File("testdir/test1/test2").mkdirs());
 
 		try {
 			File f2 = new File("temp.txt");
 			System.out.println("f2.createNewFile(): " + f2.createNewFile());
-			System.out.println("f2.renameTo(...): " + f2.renameTo(new File("testdir\\temp1.txt"))); // move!!
+			System.out.println("f2.renameTo(...): " + f2.renameTo(new File("testdir/temp1.txt"))); // move!!
 		} catch (IOException e) {
 		}
 
@@ -173,6 +172,22 @@ public class IODemo {
 		}
 	}
 
+	public static void dirFilter(boolean applyFilter) {
+		System.out.println("\nInside dirFilter ...");
+
+		File path = new File(".");
+		String[] list;
+
+		if (!applyFilter)
+			list = path.list();
+		else
+			list = path.list(new DirFilter());
+
+		// Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
+		for (String dirItem : list)
+			System.out.println(dirItem);
+	}
+
 	public static void main(String[] args) {
 		// applyEncoding();
 		// fileCopyNoBuffer();
@@ -180,6 +195,7 @@ public class IODemo {
 		// getProperties();
 		// readFromStandardInput();
 		fileMethods();
+		dirFilter(true);
 
 	}
 }
