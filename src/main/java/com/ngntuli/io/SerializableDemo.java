@@ -20,5 +20,5 @@ public class SerializableDemo implements Serializable {
 		return id;
 	}
 
-	private String gender;
+	//private String gender;
 }
