@@ -3,8 +3,7 @@ package com.ngntuli.io;
 import java.io.Serializable;
 
 public class SerializableDemo implements Serializable {
-	//private static final long serialVersionUID = 1L;
-	// static final long serialVersionUID = 8882416210786165012L;
+	private static final long serialVersionUID = 1L;
 	private String name;
 
 	public String getName() {
@@ -21,5 +20,5 @@ public class SerializableDemo implements Serializable {
 		return id;
 	}
 
-	// private String gender;
+	private String gender;
 }
