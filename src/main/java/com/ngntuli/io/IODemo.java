@@ -4,8 +4,10 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.HexFormat;
@@ -188,14 +190,38 @@ public class IODemo {
 			System.out.println(dirItem);
 	}
 
+	public void doSerialization() {
+		System.out.println("\nInside doSerialization ...");
+
+		SerializableDemo serializableDemo = new SerializableDemo();
+		serializableDemo.setName("Java");
+		System.out.println("name (before serialization): " + serializableDemo.getName());
+		System.out.println("id (before serialization): " + serializableDemo.getId());
+
+		try (ObjectOutputStream out = new ObjectOutputStream(
+				new BufferedOutputStream(new FileOutputStream("serial.ser")))) {
+			out.writeObject(serializableDemo);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void main(String[] args) {
 		// applyEncoding();
 		// fileCopyNoBuffer();
 		// fileCopyWithBufferAndArray();
 		// getProperties();
 		// readFromStandardInput();
-		fileMethods();
-		dirFilter(true);
+		// fileMethods();
+		// dirFilter(true);
+
+		// Serialization
+		if (args.length > 0 && args[0].equals("true")) {
+			new IODemo().doSerialization();
+		}
+		// new IODemo().doDeserialization();
 
 	}
 }
