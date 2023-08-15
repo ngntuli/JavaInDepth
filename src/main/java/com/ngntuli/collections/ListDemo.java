@@ -72,7 +72,32 @@ public class ListDemo {
 		return list1;
 	}
 
+	private static void iteratorDemo(List<Integer> list1) {
+		System.out.println("\nInside iteratorDemo ... ");
+
+		Iterator<Integer> iterator = list1.iterator();
+		while (iterator.hasNext()) {
+			int element = iterator.next();
+			System.out.println("element: " + element);
+
+			if (element == 9) {
+				iterator.remove();
+				iterator.forEachRemaining(Filter::add);
+			}
+		}
+		System.out.println("list1: " + list1);
+
+		// list1.forEach(System.out::println);
+		// list1.forEach(Filter::filter);
+		// list1.forEach(new Filter()); // requires implementing Consumer
+
+		// forEachRemaining:
+		// http://mail.openjdk.java.net/pipermail/lambda-dev/2013-June/010221.html
+		// A/C Brian Goetz, he doesn't see much use of this method
+	}
+
 	public static void main(String[] args) {
 		List<Integer> list1 = arrayListDemo();
+		iteratorDemo(list1);
 	}
 }
