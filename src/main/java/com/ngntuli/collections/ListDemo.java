@@ -98,7 +98,7 @@ public class ListDemo {
 	}
 
 	static void listIteratorDemo() {
-		System.out.println("\n\nInside listIteratorDemo ...");
+		System.out.println("\nInside listIteratorDemo ...");
 		List<String> list = new ArrayList<>();
 		list.add("a");
 		list.add("b");
@@ -107,32 +107,25 @@ public class ListDemo {
 		System.out.println("\nDisplaying current elements ... ");
 		ListIterator<String> iterator = list.listIterator();
 		while (iterator.hasNext()) {
-			System.out.print("iterator.nextIndex: " + iterator.nextIndex());
-			System.out.println(", iterator.next: " + iterator.next());
+			printIndexAndValue(iterator);
 
 		}
 
 		System.out.println("\nDemonstrating add, remove, and set operations ... ");
 		iterator = list.listIterator();
 		while (iterator.hasNext()) {
-			System.out.print("iterator.nextIndex: " + iterator.nextIndex());
-			System.out.println(", iterator.next: " + iterator.next());
+			printIndexAndValue(iterator);
 			if (iterator.nextIndex() == 1) {
 				System.out.println("*** Adding test at index 1");
 				iterator.add("test");
-				System.out.print("iterator.nextIndex: " + iterator.nextIndex());
-				System.out.println(", iterator.next: " + iterator.next());
+				printIndexAndValue(iterator);
 
 				System.out.println("Removing test that was added at index 1");
 				iterator.previous(); // "b"
 				iterator.previous(); // "test"
 				iterator.remove(); // remove "test"
 
-				// Uncommenting below line gives an IllegalStateException as
-				// set should be preceded by next/previous/set
-				// iterator.set("test");
-				System.out.print("iterator.nextIndex: " + iterator.nextIndex());
-				System.out.println(", iterator.next: " + iterator.next());
+				printIndexAndValue(iterator);
 				System.out.println("Setting element at index 1 as test");
 				iterator.set("test");
 				System.out.println(
@@ -144,10 +137,14 @@ public class ListDemo {
 		System.out.println("\nDisplaying current elements ... ");
 		iterator = list.listIterator();
 		while (iterator.hasNext()) {
-			System.out.print("iterator.nextIndex: " + iterator.nextIndex());
-			System.out.println(", iterator.next: " + iterator.next());
+			printIndexAndValue(iterator);
 
 		}
+	}
+
+	private static void printIndexAndValue(ListIterator<String> iterator) {
+		System.out.print("iterator.nextIndex: " + iterator.nextIndex());
+		System.out.println(", iterator.next: " + iterator.next());
 	}
 
 	public static void main(String[] args) {
