@@ -2,10 +2,11 @@ package com.ngntuli.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListDemo {
-	private static void arrayListDemo() {
+	private static List<Integer> arrayListDemo() {
 		List<Integer> list1 = new ArrayList<>();
 		list1.add(1);
 		list1.add(2);
@@ -68,9 +69,10 @@ public class ListDemo {
 				list1.remove(Integer.valueOf(element)); // valueOf is used due to its caching
 			}
 		}
+		return list1;
 	}
 
 	public static void main(String[] args) {
-		arrayListDemo();
+		List<Integer> list1 = arrayListDemo();
 	}
 }
