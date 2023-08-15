@@ -11,4 +11,13 @@ public class Filter implements Consumer<Object> {
 
 	}
 
+	public static void add(Integer i) {
+		System.out.println(i + 7);
+	}
+
+	public static void filter(Integer i) {
+		if (i == 1)
+			System.out.println(i);
+	}
+
 }
