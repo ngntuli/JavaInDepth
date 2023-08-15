@@ -61,14 +61,14 @@ public class ListDemo {
 		// System.out.println("list3: " + list3);
 		System.out.println("list1: " + list1);
 
-		for (int element : list1) {
-			System.out.println("element: " + element);
-
-			// Generates ConcurrentModificationException
-			if (element == 9) {
-				list1.remove(Integer.valueOf(element)); // valueOf is used due to its caching
-			}
-		}
+//		for (int element : list1) {
+//			System.out.println("element: " + element);
+//
+//			// Generates ConcurrentModificationException
+//			if (element == 9) {
+//				list1.remove(Integer.valueOf(element)); // valueOf is used due to its caching
+//			}
+//		}
 		return list1;
 	}
 
