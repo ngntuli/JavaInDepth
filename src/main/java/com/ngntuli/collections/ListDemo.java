@@ -97,7 +97,7 @@ public class ListDemo {
 		// A/C Brian Goetz, he doesn't see much use of this method
 	}
 
-	static void listIteratorDemo() {
+	private static void listIteratorDemo() {
 		System.out.println("\nInside listIteratorDemo ...");
 		List<String> list = new ArrayList<>();
 		list.add("a");
