@@ -1,5 +1,7 @@
 package com.ngntuli.collections;
 
+import java.util.Objects;
+
 public class Book {
 	private String title;
 	private String author;
@@ -47,5 +49,22 @@ public class Book {
 		builder.append(year);
 		builder.append("]");
 		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(author, title, year);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(author, other.author) && Objects.equals(title, other.title) && year == other.year;
 	}
 }
