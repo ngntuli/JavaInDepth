@@ -2,7 +2,7 @@ package com.ngntuli.collections;
 
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book> {
 	private String title;
 	private String author;
 	private int year;
@@ -66,5 +66,10 @@ public class Book {
 			return false;
 		Book other = (Book) obj;
 		return Objects.equals(author, other.author) && Objects.equals(title, other.title) && year == other.year;
+	}
+
+	@Override
+	public int compareTo(Book b) {
+		return getTitle().compareTo(b.getTitle());
 	}
 }
