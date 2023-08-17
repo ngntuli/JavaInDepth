@@ -35,4 +35,17 @@ public class Book {
 	public void setYear(int year) {
 		this.year = year;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Book [title=");
+		builder.append(title);
+		builder.append(", author=");
+		builder.append(author);
+		builder.append(", year=");
+		builder.append(year);
+		builder.append("]");
+		return builder.toString();
+	}
 }
