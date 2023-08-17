@@ -3,6 +3,7 @@ package com.ngntuli.collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SetDemo {
 
@@ -36,8 +37,26 @@ public class SetDemo {
 		System.out.println("LinkedHashSet: " + linkedHashSet);
 	}
 
+	private static void treeSetDemo() {
+		Book book1 = new Book("Harry Potter", "J.K.Rowling", 1997);
+		Book book2 = new Book("Harry Potter", "J.K.Rowling", 1997);
+		Book book3 = new Book("Walden", "Henry David Thoreau", 1854);
+		Book book4 = new Book("Effective Java", "Joshua Bloch", 2008);
+
+		Set<Book> books = new TreeSet<>();
+		books.add(book1);
+		books.add(book2);
+		books.add(book3);
+		books.add(book4);
+
+		for (Book book : books) {
+			System.out.println(book);
+		}
+	}
+
 	public static void main(String[] args) {
 		// hashSetDemo();
-		linkedHashSetDemo();
+		// linkedHashSetDemo();
+		treeSetDemo();
 	}
 }
