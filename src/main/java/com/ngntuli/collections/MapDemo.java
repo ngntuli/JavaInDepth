@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class MapDemo {
 	private static void hashMapDemo() {
@@ -102,9 +103,31 @@ public class MapDemo {
 		System.out.println(lruCache);
 	}
 
+	private static void treeMapDemo() {
+		System.out.println("\nInside TreeMapDemo ...");
+		TreeMap<String, Integer> map1 = new TreeMap<>();
+		map1.put("Nkosinathi", 33);
+		map1.put("Ntuli", 66);
+		map1.put("Charlotte", 16);
+
+		System.out.println(map1);
+
+		System.out.println("Iterating using entrySet ...");
+		Set<Map.Entry<String, Integer>> mappings = map1.entrySet();
+		for (Map.Entry<String, Integer> mapping : mappings) {
+			System.out.println("Name: " + mapping.getKey() + ", Age: " + mapping.getValue());
+			if (mapping.getKey().equals("Nkosinathi"))
+				mapping.setValue(26);
+		}
+		System.out.println(map1);
+		System.out.println(map1.floorEntry("Charlotte"));
+
+	}
+
 	public static void main(String[] args) {
 		// hashMapDemo();
 		// immutableKeysDemo();
-		lruCacheTest();
+		// lruCacheTest();
+		treeMapDemo();
 	}
 }
