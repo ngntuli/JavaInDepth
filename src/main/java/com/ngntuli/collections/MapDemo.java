@@ -84,13 +84,12 @@ public class MapDemo {
 //	3. Finally, change object type from LRUCache to LinkedHashMap and see output.
 //	All 5 mappings will be printed as removeEldestEntry would return false by default
 	private static void lruCacheTest() {
-		System.out.println("\nInside lruCacheTest ...");
+		System.out.println("\nInside LRUCacheTest ...");
 		Map<String, String> lruCache = new LRUCache<>(16, 0.75f, true);
 		lruCache.put("a", "A");
 		lruCache.put("b", "B");
 		System.out.println(lruCache);
 
-		lruCache.get("a"); // multiple gets to "a" will not make a difference
 		lruCache.get("a");
 		System.out.println(lruCache);
 		lruCache.get("b");
