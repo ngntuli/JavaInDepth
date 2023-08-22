@@ -79,8 +79,32 @@ public class MapDemo {
 		System.out.println(map2.get(s));
 	}
 
+//	1. See output with and without commenting get() calls
+//	2. See output when accessOrder=false with get() calls. get calls do not have any influence
+//	3. Finally, change object type from LRUCache to LinkedHashMap and see output.
+//	All 5 mappings will be printed as removeEldestEntry would return false by default
+	private static void lruCacheTest() {
+		System.out.println("\nInside lruCacheTest ...");
+		Map<String, String> lruCache = new LRUCache<>(16, 0.75f, true);
+		lruCache.put("a", "A");
+		lruCache.put("b", "B");
+		System.out.println(lruCache);
+
+		lruCache.get("a"); // multiple gets to "a" will not make a difference
+		lruCache.get("a");
+		System.out.println(lruCache);
+		lruCache.get("b");
+		System.out.println(lruCache);
+
+		lruCache.put("c", "C");
+		System.out.println(lruCache);
+		lruCache.put("d", "D");
+		System.out.println(lruCache);
+	}
+
 	public static void main(String[] args) {
 		// hashMapDemo();
-		immutableKeysDemo();
+		// immutableKeysDemo();
+		lruCacheTest();
 	}
 }
