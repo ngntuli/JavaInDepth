@@ -2,6 +2,7 @@ package com.ngntuli.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -82,7 +83,7 @@ public class MapDemo {
 //	1. See output with and without commenting get() calls
 //	2. See output when accessOrder=false with get() calls. get calls do not have any influence
 //	3. Finally, change object type from LRUCache to LinkedHashMap and see output.
-//	All 5 mappings will be printed as removeEldestEntry would return false by default
+//	All 4 mappings will be printed as removeEldestEntry would return false by default
 	private static void lruCacheTest() {
 		System.out.println("\nInside LRUCacheTest ...");
 		Map<String, String> lruCache = new LRUCache<>(16, 0.75f, true);
