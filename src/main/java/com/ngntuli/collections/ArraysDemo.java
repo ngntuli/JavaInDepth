@@ -77,7 +77,25 @@ public class ArraysDemo {
 		System.out.println(ia[0][2]);
 	}
 
+	// Java 8 ~ Parallelized Operations
+	private static void parallel() {
+		// For large arrays on multi-core. Min size atleast 1 >> 13 = 8192
+		int[] iArray = { 23, 4, 59 };
+		Arrays.parallelSort(iArray);
+		System.out.println("iArray parallel sort: " + Arrays.toString(iArray));
+
+		IntBinaryOperatorImpl IntBinaryOperatorImpl = new IntBinaryOperatorImpl();
+		Arrays.parallelPrefix(iArray, IntBinaryOperatorImpl);
+		System.out.println("Parallel Prefix: " + Arrays.toString(iArray));
+
+		IntUnaryOperatorImpl intUnaryOperatorImpl = new IntUnaryOperatorImpl();
+		intUnaryOperatorImpl.setArray(iArray);
+		Arrays.parallelSetAll(iArray, intUnaryOperatorImpl);
+		System.out.println("Parallel Set All: " + Arrays.toString(iArray));
+	}
+
 	public static void main(String[] args) {
-		sequential();
+		// sequential();
+		parallel();
 	}
 }
