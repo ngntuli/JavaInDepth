@@ -44,6 +44,15 @@ public class GenericsDemo {
 		Container<?> someStore = stringStore;
 		Object object = someStore.get();
 		System.out.println("Stored element: " + object);
+
+		List<Integer> intList1 = Arrays.asList(1, 2);
+		List<Integer> intList2 = Arrays.asList(3, 4);
+		invalidAggregate(intList1, intList2, new ArrayList());
+	}
+
+	private static void invalidAggregate(List<?> list1, List<?> list2, List<?> list3) {
+		// list3.addAll(null); // null ok
+		// list3.addAll(list2);
 	}
 
 	private static int getCommonElementsCountWithWildcard(List<?> list1, List<?> list2) {
