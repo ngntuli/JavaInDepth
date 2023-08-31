@@ -32,7 +32,22 @@ public class GenericsDemo {
 		System.out.println(Arrays.toString(array));
 
 		// Raw type demo:
-		rawTypeTest();
+		//rawTypeTest();
+
+		List<String> strList1 = Arrays.asList("a", "b", "c");
+		List<String> strList2 = Arrays.asList("b", "c", "d");
+		getCommonElementsCount(strList1, strList2);
+	}
+
+	private static int getCommonElementsCount(List<String> strList1, List<String> strList2) {
+		int count = 0;
+		for (Object element : strList1) {
+			if (strList2.contains(element)) {
+				count++;
+			}
+		}
+		System.out.println("Common elements count: " + count);
+		return count;
 	}
 
 	private static void rawTypeTest() {
