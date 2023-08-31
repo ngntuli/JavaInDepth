@@ -48,6 +48,20 @@ public class GenericsDemo {
 		List<Integer> intList1 = Arrays.asList(1, 2);
 		List<Integer> intList2 = Arrays.asList(3, 4);
 		invalidAggregate(intList1, intList2, new ArrayList());
+
+		// go(new ArrayList<Integer>());
+		// go(new Integer[1]);
+	}
+
+	// Invariance
+	private static void go(List<Number> lNumbers) {
+
+	}
+
+	// Covariance
+	private static void go(Number[] numbers) {
+		numbers[0] = 42.2;
+
 	}
 
 	private static void invalidAggregate(List<?> list1, List<?> list2, List<?> list3) {
