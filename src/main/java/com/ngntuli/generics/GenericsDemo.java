@@ -30,5 +30,17 @@ public class GenericsDemo {
 		array[0] = new ArrayList();
 		// array[1] = new LinkedList();
 		System.out.println(Arrays.toString(array));
+
+		// Raw type demo:
+		rawTypeTest();
+	}
+
+	private static void rawTypeTest() {
+		System.out.println("\nInside rawTypeTest ...");
+		int ISBN = 1505297729;
+		List<Double> prices = new ArrayList<>();
+
+		HalfIntegrator.getPrice(ISBN, prices);
+		Double price = prices.get(0);
 	}
 }
