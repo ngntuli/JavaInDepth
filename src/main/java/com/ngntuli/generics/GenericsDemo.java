@@ -32,11 +32,29 @@ public class GenericsDemo {
 		System.out.println(Arrays.toString(array));
 
 		// Raw type demo:
-		//rawTypeTest();
+		// rawTypeTest();
 
 		List<String> strList1 = Arrays.asList("a", "b", "c");
 		List<String> strList2 = Arrays.asList("b", "c", "d");
-		getCommonElementsCount(strList1, strList2);
+		// getCommonElementsCount(strList1, strList2);
+
+		// Wildcard
+		getCommonElementsCountWithWildcard(strList1, strList2);
+
+		Container<?> someStore = stringStore;
+		Object object = someStore.get();
+		System.out.println("Stored element: " + object);
+	}
+
+	private static int getCommonElementsCountWithWildcard(List<?> list1, List<?> list2) {
+		int count = 0;
+		for (Object element : list1) {
+			if (list2.contains(element)) {
+				count++;
+			}
+		}
+		System.out.println("Common elements count: " + count);
+		return count;
 	}
 
 	private static int getCommonElementsCount(List<String> strList1, List<String> strList2) {
