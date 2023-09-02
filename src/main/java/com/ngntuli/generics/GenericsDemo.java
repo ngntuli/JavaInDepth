@@ -5,6 +5,7 @@ import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -70,8 +71,68 @@ public class GenericsDemo<T> {
 		GenericsDemo.invarianceWorkaround(new ArrayList<Number>()); // Integer
 		List<Integer> intList3 = new ArrayList<>();
 		// GenericsDemo.invarianceWorkaround(intList3, 23);
-		GenericsDemo.invarianceWorkaround(intList3);
-		Integer data = intList3.get(0);
+		// GenericsDemo.invarianceWorkaround(intList3);
+		// Integer data = intList3.get(0);
+
+		boundedWildcards();
+	}
+
+	private static void boundedWildcards() {
+		System.out.println("\n\nInside boundedWildcards ...");
+		List<Integer> intList = Arrays.asList(11, 21, 31);
+		display(intList);
+		List<Double> doubleList = Arrays.asList(11.5, 21.5, 31.5);
+		display(doubleList);
+
+		// Pass a List<String> too!!
+		List<Number> numList = new ArrayList<>();
+		aggregateWithConsumer(intList, doubleList, numList);
+		System.out.println("numList: " + numList);
+
+		Collections.addAll(new ArrayList<Object>(), 1, 2);
+		Collections.copy(numList, doubleList);
+		System.out.println("numList after copy: " + numList);
+		System.out.println("Collections.disjoint: " + Collections.disjoint(intList, doubleList));
+
+		// Type argument inference is Integer with wildcard type version of replaceAll!
+		GenericsDemo.replaceAll(numList, 11.5, 44);
+		System.out.println("numList: " + numList);
+
+		// ArrayList<Number> numList2 = new ArrayList<>(intList);
+	}
+
+//	private static <T> boolean replaceAll(List<? super T> list, T oldVal, T newVal) {
+//		for (int i = 0; i < list.size(); i++) {
+//			if (oldVal.equals(list.get(i)))
+//				list.set(i, newVal);
+//		}
+//		return true;
+//	}
+
+	// Demonstrates exact match as it both produces & consumes data
+	private static <T> boolean replaceAll(List<T> list, T oldVal, T newVal) {
+		for (int i = 0; i < list.size(); i++) {
+			if (oldVal.equals(list.get(i)))
+				list.set(i, newVal);
+		}
+		return true;
+	}
+
+//	static <T extends Number> void display(List<T> list) {
+//		for (Number element : list) {
+//			System.out.println("display()/element: " + element);
+//
+//		}
+//	}
+
+	// Changing to super will give compiler error as with super
+	// List<Object> can be passed and here Number is the type in for-loop.
+	// Would work if type in for-loop is changed to Object
+	private static void display(List<? extends Number> list) {
+		for (Number element : list) {
+			System.out.println("display()/element: " + element/* .intValue() */);
+		}
+		// list.add(22);
 	}
 
 	// Invariance workaround ~ For harmless scenarios where type safety is not a
@@ -203,6 +264,13 @@ public class GenericsDemo<T> {
 	private static void go(Number[] numbers) {
 		numbers[0] = 42.2;
 
+	}
+
+	// Renaming to aggregate leads to compiler error due to type erasure
+	// e.g., l1 --> List<Integer, l2 --> List<Double>
+	private static <E> void aggregateWithConsumer(List<? extends E> l1, List<? extends E> l2, List<? super E> l3) {
+		l3.addAll(l1);
+		l3.addAll(l2);
 	}
 
 	private static <E> void aggregate(List<E> l1, List<E> l2, List<E> l3) {
