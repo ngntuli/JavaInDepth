@@ -19,7 +19,7 @@ public class Cache {
 
 	private class MyCacheIterator implements CacheIterator {
 
-		private int i;
+		private int i = 0;
 
 		@Override
 		public boolean hasNext() {
