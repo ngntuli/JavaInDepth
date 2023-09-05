@@ -3,6 +3,7 @@ package com.ngntuli.nestedclasses;
 public class Bookmark {
 	private long id;
 	private String title;
+	private double rating;
 
 	public long getId() {
 		return id;
