@@ -20,4 +20,12 @@ public class Bookmark {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
 }
