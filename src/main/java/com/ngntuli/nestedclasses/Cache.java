@@ -8,6 +8,10 @@ public class Cache {
 		items = new Bookmark[size];
 	}
 
+	public Bookmark[] getItems() {
+		return items;
+	}
+
 	public void add(Bookmark item) {
 		if (next < items.length)
 			items[next++] = item;
