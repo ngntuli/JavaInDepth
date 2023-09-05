@@ -1,5 +1,7 @@
 package com.ngntuli.nestedclasses;
 
+import java.util.Arrays;
+
 public class NestedClassesDemo {
 	public static void main(String[] args) {
 		Cache recommendedItems = new Cache(5);
@@ -37,5 +39,12 @@ public class NestedClassesDemo {
 			System.out.println(iterator.next().getTitle());
 		}
 
+		Arrays.sort(recommendedItems.getItems());
+		System.out.println("\nSorted by rating ...");
+		iterator = recommendedItems.iterator();
+
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next().getTitle());
+		}
 	}
 }
