@@ -51,8 +51,16 @@ public class NestedClassesDemo {
 				return o1.getRating() < o2.getRating() ? 1 : -1;
 			}
 		});
-		
+
 		System.out.println("\nSorted by rating (Anonymous Class) ...");
+		iterator = recommendedItems.iterator();
+
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next().getTitle());
+		}
+
+		Arrays.sort(recommendedItems.getItems(), Bookmark.RATING_COMPARATOR);
+		System.out.println("\nSorted by rating (Static Member Class) ...");
 		iterator = recommendedItems.iterator();
 
 		while (iterator.hasNext()) {
