@@ -51,7 +51,8 @@ public class NestedClassesDemo {
 				return o1.getRating() < o2.getRating() ? 1 : -1;
 			}
 		});
-		System.out.println("\nSorted by rating ...");
+		
+		System.out.println("\nSorted by rating (Anonymous Class) ...");
 		iterator = recommendedItems.iterator();
 
 		while (iterator.hasNext()) {
