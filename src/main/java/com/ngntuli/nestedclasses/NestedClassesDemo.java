@@ -57,5 +57,10 @@ public class NestedClassesDemo {
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next().getTitle());
 		}
+
+		// Data translator
+		System.out.println("\nData translator ...");
+		DataTranslator dataTranslator = new DataTranslator();
+		System.out.println(dataTranslator.getBookAsXml(2002, "Interface vs Abstract Class", 3.0, 5, 6));
 	}
 }
