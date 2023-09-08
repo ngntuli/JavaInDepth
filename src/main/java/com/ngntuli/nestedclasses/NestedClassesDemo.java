@@ -67,6 +67,14 @@ public class NestedClassesDemo {
 			System.out.println(iterator.next().getTitle());
 		}
 
+		Arrays.sort(recommendedItems.getItems(), new Bookmark.ComparatorList.StringLengthComparator());
+		System.out.println("\nSorted by String length (Static Member Class) ...");
+		iterator = recommendedItems.iterator();
+		
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next().getTitle());
+		}
+		
 		// Data translator
 		System.out.println("\nData translator ...");
 		DataTranslator dataTranslator = new DataTranslator();
