@@ -22,6 +22,33 @@ public class Bookmark {
 
 	}
 
+	// public helper class
+	public class ComparatorList {
+
+		public static class RatingComparator implements Comparator<Bookmark>, Serializable {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public int compare(Bookmark o1, Bookmark o2) {
+				return o1.getRating() < o2.getRating() ? 1 : -1;
+			}
+
+		}
+
+		public static class StringLengthComparator implements Comparator<Bookmark>, Serializable {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public int compare(Bookmark o1, Bookmark o2) {
+				return o1.getTitle().length() - o2.getTitle().length();
+			}
+
+		}
+
+	}
+
 	public long getId() {
 		return id;
 	}
